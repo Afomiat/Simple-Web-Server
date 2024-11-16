@@ -17,6 +17,9 @@ func main() {
 		c.String(http.StatusOK, "I love exploring new places!")
 	})
 
+	r.GET("/dream", func(c *gin.Context) {
+		c.String(http.StatusOK, "I dream of becoming a Backend Developer!")
+	})
 
 	r.Run(":8080")
 }
