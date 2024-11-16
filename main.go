@@ -13,6 +13,10 @@ func main() {
 		c.String(http.StatusOK, "Afomia Tadesse")
 	})
 
+	r.GET("/hobby", func(c *gin.Context) {
+		c.String(http.StatusOK, "I love exploring new places!")
+	})
+
 
 	r.Run(":8080")
 }
