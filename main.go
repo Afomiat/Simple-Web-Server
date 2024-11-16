@@ -2,11 +2,17 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	r := gin.Default()
 
 	r.GET("/name", func(c *gin.Context) {
@@ -21,6 +27,5 @@ func main() {
 		c.String(http.StatusOK, "I dream of becoming a Backend Developer!")
 	})
 
-	r.Run(":8080")
+	r.Run(":" + port)
 }
-
